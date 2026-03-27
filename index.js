@@ -4,6 +4,14 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/privacidade', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'privacidade.html'));
+});
+
+app.get('/termos', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'termos.html'));
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
